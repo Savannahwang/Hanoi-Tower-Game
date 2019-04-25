@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tower Hanoi Game</title>
+  <link rel="stylesheet" type="text/css" href="HTG.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="HTG.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      draggable($('.dragme'));
+      droppable($('.drophere'));
+      steps = 0;
+    });
+    var steps;
+    function cancel(event) {
+      event.preventDefault();
+      return false;
+    }
+    function draggable(element) {
+      $(element)
+      .attr('draggable', 'true')
+      .bind('dragend', cancel)
+      .bind('dragstart', function(event) {
+        if (canBeDragged($(event.target).parent(), event.target.id))
+          event.originalEvent.dataTransfer.setData("Text", event.target.id);
+        return true;
+      })
+    }
+    function droppable(element) {
+      $(element)
+      .bind('dragover', cancel)
+      .bind('drop', function(event) {
+        target = $(event.target);
+        if (target.attr("class") != "drophere") 
+        // in case the drop was on another item such as another box
+          target = $(target.parents(".drophere"));
+        event.preventDefault();
+        var discId = event.originalEvent.dataTransfer.getData("Text");
+        if (discId && canAppend(target.find(".box"), discId)) {
+          $("#count").text(++steps);
+          disc = $("#"+discId);
+          disc.remove();
+          target.find(".box").prepend(disc);
+          draggable(disc);
+          $("#message").text("");
+        } else
+          $("#message").text("hey man, you can't do that");
+        done(target.find(".box"))
+        return false;
+      });
+    }
+    function done(target) {
+      if ($(target).children().length == 4 && $(target).parent().attr("id") != "drop1"){
+        $("#count").text("");
+        $("#steps").text("");
+        $("#message").text("You've won! in " + steps + " steps"); 
+      }
+    }
+    
+    function canBeDragged(from, discId) {
+      return $(from).children()[0].id == discId;
+    }
+    function canAppend(target, discId) {
+      children = $(target).children();
+      return children.length == 0 || parseInt(children[0].id) >= parseInt(discId);
+    }
+  
+  </script>
+
+<body>
+ 
+
+  <nav class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="navbar-brand">
+         <img src="https://certik.org/img/certik-logotype-h-w.svg">
+       </div>
+      <ul class="navbar-nav d-inline-block text-white">
+      <li class="nav-item">
+        Home 
+      </li>
+      <li class="nav-item ">
+       Services
+      </li>
+      <li class="nav-item ml-3">
+        Advantages
+      </li>
+      <li class="nav-item ml-5">
+        Testimonials
+      </li>
+      <li class="nav-item pl-0">
+        News
+       </li>
+       <li class="nav-item pl-0">
+        About
+      </li>
+    </ul>
+    <ul class="navbar-nav d-inline-block float-right text-white">
+       <li class="nav-item" style="width:200px;">
+        <button class="btn btn-danger" type="button">Audit Smart Contract</button>
+      </li>
+      <li class="nav-item">
+       簡體中文
+      </li>
+    </ul>
+  
+     </div>
+</div>
+  </nav>
+   <div class="mid-container">
+    <div class="row">
+      <div class="col-lg-6">
+     <h1 class="content"style="color:#ffffff;">Drag the ball to the boxes</h1>
+     <div id="steps" style="color:#ffffff;">steps: <span id="count" style="color:#ffffff;">0</span></div>
+    <div id="message"></div>
+  </div>
+  <div class="tower col-lg-6">
+    <div class="drophere border border-danger" id="drop1">
+      <div class="box">
+        <div class="dragme dragme-1" id="1"></div>
+        <div class="dragme dragme-2" id="2"></div>
+        <div class="dragme dragme-3" id="3"></div>
+        <div class="dragme dragme-4" id="4"></div>
+      </div>
+    </div>
+    <div class="drophere" id="drop2">
+      <div class="box"></div>
+    </div>
+    <div class="drophere" id="drop3">
+      <div class="box"></div>
+    </div>
+  </div>
+      <div class="col-lg-1" >   
+        <input type="reset" value="reset" id="reset" class="btn btn-primary">
+      </div>
+     
+  </div>
+</body>
+</html>

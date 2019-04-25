@@ -1,0 +1,80 @@
+body {
+  padding-top:50px;
+  padding-left:100px;
+  background: linear-gradient(to right, #934c93, #cdc1c5);
+}
+nav{
+  display: inline-block;
+}
+.nav-item{
+  width:90px;
+  display: inline-block;
+  text-align: right;
+  
+}
+.navbar-brand img {
+    height: 40px;
+}
+
+.col-lg-4, .col-lg-8{
+  margin-top: 10%;
+  color: #ffffff;
+}
+
+div span{
+	color: #ffffff;
+}
+.btn {
+	margin-top: 50px;
+}
+.box{
+	width: 150px;
+	height: 200px;
+	bottom: 20px;
+	position: relative;
+	display: inline-block;
+	margin: 20% 1%;
+	border: 2px solid white;
+	background: linear-gradient(90deg,
+                    rgba(43,8,4,1) 10%, transparent 0),
+                  linear-gradient(
+		rgba(43,8,4,1) 10%, transparent 0);
+	background-position: left 65.5px top 177px;
+}
+
+.disc1{
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	border-radius: 15px 15px;
+	position: relative;
+  
+}
+.disc2{
+	width:40px;
+	height: 20px;
+	background-color: green;
+	border-radius: 15px 15px;
+	position: relative;
+
+}
+
+.disc3{
+	width: 60px;
+	height: 20px;
+	background-color: yellow;
+	border-radius: 15px 15px;
+	position: relative;
+
+}
+.disc4{
+	width: 80px;
+	height: 20px;
+	background-color: blue;
+	border-radius: 15px 15px;
+	position: relative;
+	vertical-align: bottom;
+}
+
+
+

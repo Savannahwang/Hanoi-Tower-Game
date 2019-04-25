@@ -1,0 +1,41 @@
+$(document).ready(function() {
+let drop1  = document.getElementById("drop1");
+let drop2 = document.getElementById("drop2");
+
+let alldicses = document.getElementsByClassName ("alldicses");
+let mouseOffset = {x:0, y:0};
+let isMouseDown = false;
+
+function onMouseDown(e, disc){
+   isMouseDown = ture;
+
+   mosueOffset = {x: disc.offsetLeft - e.clientX, y: disc.offsetTop - e.clientY}; 
+   
+   disc.style.backgroundcolor = "#fff"; 
+}
+function onMouseMove(e, disc){
+    e.preventDefault();
+    if(isMouseDown) {
+      disc.style.left = e.clientX + mouseOffset.x + "px";
+      disc.style.top = e.clientY + mouseOffset.y + "px";
+  }
+ 
+}
+function onMouseUp(e, disc){
+ disc.style.backgroundcolor = "#fff";
+}
+
+for(let i = 0; i< alldicses.length; i++){
+    let disc = alldicses[i];
+   
+    disc.addEventListener("mousedown", (e) => {
+        onMouseDown(e, disc); });
+
+    document.body.addEventListener("mousemove", (e) => {
+        onMouseMove(e, disc); });
+     disc.addEventListener("mouseup" ,(e) => {
+         onMouseUp(e, disc); });
+   }
+
+});
+

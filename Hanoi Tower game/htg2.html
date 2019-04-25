@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tower Hanoi Game</title>
+  <link rel="stylesheet" type="text/css" href="htg2.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="htg2.js"></script>
+ <body>
+
+  <nav class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="navbar-brand">
+         <img src="https://certik.org/img/certik-logotype-h-w.svg">
+       </div>
+      <ul class="navbar-nav d-inline-block text-white">
+      <li class="nav-item">
+        Home 
+      </li>
+      <li class="nav-item ">
+       Services
+      </li>
+      <li class="nav-item ml-3">
+        Advantages
+      </li>
+      <li class="nav-item ml-5">
+        Testimonials
+      </li>
+      <li class="nav-item pl-0">
+        News
+       </li>
+       <li class="nav-item pl-0">
+        About
+      </li>
+    </ul>
+     </div>
+   </div>
+
+   </nav>
+   <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-8"> 
+     <h1 class="content">Drag the ball to the boxes</h1>
+     <p >Rules</p>
+     <ol >
+      <li>Only one disk can be moved at a time</li>
+       <li>A larger disk can never be placed on top of a smaller disk.
+       </li>
+     </ol>
+     <div id="steps">steps: <span id="count">0</span></div>
+    <div id="message"></div>
+     <div>   
+        <button type="button" id="reset" class="btn btn-primary">Reset</button>
+      </div>
+  </div>
+  <div class="container col-lg-8 col-md-8">
+      <div class = "row">
+          <div class="box">
+              <div class="disc disc1" id="disc" draggable="true" ></div>
+              <div class="disc disc2" id="disc" draggable="true"></div>
+              <div class="disc disc3" id="disc" draggable="true"></div>
+              <div class="disc disc4" id="disc" draggable="true"></div>
+          </div>
+          
+
+          <div class="box"></div>
+
+          <div class="box"></div>
+      </div>
+  </div>
+     
+     
+  </div>
+</body>
+</html>

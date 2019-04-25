@@ -1,0 +1,22 @@
+var dropTarget = document.querySelector(".box");
+var draggables = document.querySelectorAll("#drop1");
+
+
+for (let i = 0; i < draggables.length; i++){
+    draggables[i].addEventListener("dragstart", function (ev){
+     ev.dataTransfer.setData("srcId", e.target.id);
+    });
+}
+dropTarget.addEventListener("dragover", function (ev){
+     ev.preventDefault();
+     });
+dropTarget.addEventListener("drop", function (ev){
+      ev.preventDefault();
+      let target = e.target;
+      let droppable = target.classList.contains('#drop2');
+      let srcId = e.dataTransfer.getData("srcId");
+      if (droppable){
+        ev.target.appendChild(document.getElementById(srcId));
+      }
+      
+});

@@ -1,0 +1,71 @@
+body {
+  padding-top:50px;
+  padding-left:100px;
+  background: linear-gradient(to right, black, #424c53);
+}
+nav{
+  display:inline-block;
+}
+.nav-item{
+  width:90px;
+  display:inline-block;
+  text-align: right;
+  
+}
+.navbar-brand img {
+    height: 40px;
+}
+.content{
+  margin-top:50%;
+}
+.tower{
+  margin-top:25%;
+}
+.drophere {
+  height: 150px;
+  width: 100px;
+  border: 3px dashed #ccc;
+  margin: 5px;
+  padding: 10px;
+  float: left;
+  position:relative;
+}
+.box {
+  width: 80px;
+  position:absolute;
+  bottom:10px;
+  border: 2px solid orange;
+}
+#message {
+  height: 10px;
+  padding-left: 50px;
+  margin-bottom: 60px;
+  display:block;
+  color:white;
+}
+.dragme {
+  height: 20px;
+  margin:1px auto;
+  border: 1px solid #ccc;
+  border-radius: 15px 15px;
+}
+.dragme-1{
+  width: 20px;
+  background-color:red;
+}
+.dragme-2{
+  width: 40px;
+  background-color:green;
+}
+.dragme-3{
+  width: 60px;
+  background-color:yellow;
+}
+.dragme-4{
+  width: 80px;
+  background-color:blue;
+}
+
+div#steps {
+	float: left;
+}
