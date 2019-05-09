@@ -1,5 +1,6 @@
-var steps = document.querySelector('steps');
-var count = document.querySelectorAll('count');
+let steps = document.querySelector('steps');
+let count = document.querySelectorAll('count');
+const reset = document.querySelector('reset');
 
 
 
@@ -10,13 +11,6 @@ var count = document.querySelectorAll('count');
 
 function reset(){
     let steps = document.getElementsByClassName('steps');
-
-    for (let steps = 0; steps < disc.length; steps++){
-        let disc = steps.getAtrribute('disc');
-
-    console.log(steps, disc);
-    }
- 
 }
 
 document.getElementById('reset').addEventListener('click', reset);
