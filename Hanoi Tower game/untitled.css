@@ -1,20 +1,9 @@
+*, *::after, *::before{
+  box: box-size;
+}
+
 body {
   padding-top:50px;
   padding-left:100px;
   background: linear-gradient(to right, black, #424c53);
-}
-nav{
-  display:inline-block;
-}
-.nav-item{
-  width:90px;
-  display:inline-block;
-  text-align: right;
-  
-}
-.navbar-brand img {
-    height: 40px;
-}
-.content{
-  margin-top:50%;
 }
