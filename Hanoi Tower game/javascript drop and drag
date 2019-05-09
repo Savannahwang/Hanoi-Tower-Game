@@ -1,5 +1,5 @@
-var dropTarget = document.querySelector(".box");
-var draggables = document.querySelectorAll("#drop1");
+const dropTarget = document.querySelector(".box");
+let draggables = document.querySelectorAll("#drop1");
 
 
 for (let i = 0; i < draggables.length; i++){
