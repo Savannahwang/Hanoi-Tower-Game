@@ -1,3 +1,5 @@
+// jQuery 
+
 $(document).ready(function() {
 let drop1  = document.getElementById("drop1");
 let drop2 = document.getElementById("drop2");
